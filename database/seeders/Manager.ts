@@ -1,6 +1,4 @@
 import BaseSeeder from '@ioc:Adonis/Lucid/Seeder'
-import ManagerModel from 'App/Models/ManagerModel'
-import Branch from 'Contracts/enums/Branch'
 import { ManagerFactory } from 'Database/factories'
 
 export default class extends BaseSeeder {

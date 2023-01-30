@@ -1,10 +1,8 @@
 const cron = require('node-cron')
 import Mail from '@ioc:Adonis/Addons/Mail'
 import Env from '@ioc:Adonis/Core/Env'
-import Logger from '@ioc:Adonis/Core/Logger'
 import ManagerModel from 'App/Models/ManagerModel'
-import MemberModel from 'App/Models/MemberModel'
-
+                                                                                                      
 const monthlyEvaluation = () => {
   const currentMonth = new Date().toLocaleString('default', { month: 'long' })
   const sendEmails = async (

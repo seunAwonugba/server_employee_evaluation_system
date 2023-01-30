@@ -1,5 +1,4 @@
 import { BaseTask } from 'adonis5-scheduler/build'
-import Logger from '@ioc:Adonis/Core/Logger'
 import ManagerModel from 'App/Models/ManagerModel'
 import Mail from '@ioc:Adonis/Addons/Mail'
 import Env from '@ioc:Adonis/Core/Env'
@@ -46,7 +45,6 @@ export default class SendMail extends BaseTask {
     // Logger.info('Cron job works')
     const managers = await ManagerModel.all()
     for (let i in managers) {
-      Logger.info(managers[i])
       sendEmails(
         managers[i].email,
         `${managers[i].firstName}, Monthly Staff Evaluation For Your Staffs`,

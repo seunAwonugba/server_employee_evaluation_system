@@ -2,7 +2,6 @@ import { BaseTask } from 'adonis5-scheduler/build'
 import Mail from '@ioc:Adonis/Addons/Mail'
 import Env from '@ioc:Adonis/Core/Env'
 import MemberModel from 'App/Models/MemberModel'
-import Logger from '@ioc:Adonis/Core/Logger'
 
 export default class MemberMail extends BaseTask {
   public static get schedule() {
@@ -44,7 +43,6 @@ export default class MemberMail extends BaseTask {
 
     const members = await MemberModel.all()
     for (let i in members) {
-      Logger.info(members[i])
       sendMail(
         members[i].email,
         `${members[i].firstName}, Monthly Staff Evaluation For Your Manager`,

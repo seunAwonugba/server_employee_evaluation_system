@@ -36,8 +36,6 @@ const monthlyEvaluation = () => {
     const members = await MemberModel.all()
 
     members.map((member) => {
-      Logger.info(member)
-
       sendEmails(
         member.email,
         `${member.firstName}, Monthly Staff Evaluation For Your Managers`,
